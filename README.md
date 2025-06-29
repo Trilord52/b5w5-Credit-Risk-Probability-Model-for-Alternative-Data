@@ -26,7 +26,7 @@ Since the dataset lacks a direct "default" label, as noted in the *Credit Risk A
 As highlighted in the *Credit Risk Analysis and Modeling* presentation, simple models like Logistic Regression with WoE are highly interpretable, with coefficients that clearly indicate feature impact, making them regulator-friendly and easy to audit in a Basel II-compliant environment. They are computationally efficient but may miss complex, non-linear patterns in alternative data, potentially reducing predictive accuracy. Conversely, Gradient Boosting Machines (GBMs) capture non-linear relationships for higher accuracy, as noted in the presentation, but are less interpretable, posing challenges for regulatory scrutiny and requiring Explainable AI (XAI) techniques. In a regulated financial context, interpretability often outweighs marginal accuracy gains to ensure compliance, transparency, and trust, though GBMs may be preferred if accuracy is critical and interpretability can be addressed through additional tools.
 
 ## Project Structure
-- `data/raw/`: Raw data files (e.g., transactions, variable definitions).
+- `data/raw/`: Raw data files (e.g., transactiond data, variable definitions).
 - `data/processed/`: Processed datasets for model training.
 - `notebooks/`: Jupyter notebooks for EDA (`1.0-eda.ipynb`).
 - `src/`: Scripts for data processing, training, prediction, and API.
@@ -41,5 +41,5 @@ As highlighted in the *Credit Risk Analysis and Modeling* presentation, simple m
 ## Quick Start
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data.git
+   git clone https://github.com/Trilord52/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data.git
    cd b5w5-Credit-Risk-Probability-Model-for-Alternative-Data
