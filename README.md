@@ -25,8 +25,29 @@ Since the dataset lacks a direct "default" label, as noted in the *Credit Risk A
 ### What are the key trade-offs between using a simple, interpretable model (like Logistic Regression with WoE) versus a complex, high-performance model (like Gradient Boosting) in a regulated financial context?
 As highlighted in the *Credit Risk Analysis and Modeling* presentation, simple models like Logistic Regression with WoE are highly interpretable, with coefficients that clearly indicate feature impact, making them regulator-friendly and easy to audit in a Basel II-compliant environment. They are computationally efficient but may miss complex, non-linear patterns in alternative data, potentially reducing predictive accuracy. Conversely, Gradient Boosting Machines (GBMs) capture non-linear relationships for higher accuracy, as noted in the presentation, but are less interpretable, posing challenges for regulatory scrutiny and requiring Explainable AI (XAI) techniques. In a regulated financial context, interpretability often outweighs marginal accuracy gains to ensure compliance, transparency, and trust, though GBMs may be preferred if accuracy is critical and interpretability can be addressed through additional tools.
 
+## Methods
+
+### Task 2: Exploratory Data Analysis
+A Jupyter Notebook (`notebooks/1.0-eda.ipynb`) was created to explore the Xente transaction dataset. Key steps included:
+- **Data Loading**: Loaded `data.csv` and `xente_variable_definitions.csv` to understand structure.
+- **Summary Statistics**: Computed statistics for numerical (`Amount`, `Value`) and categorical (`ProductCategory`, `ChannelId`) features.
+- **Visualizations**: Generated histograms for numerical features, bar plots for categorical features, and a correlation heatmap.
+- **Missing Values**: Identified minimal missing values; proposed imputation with median for numerical and mode for categorical features.
+- **Outlier Detection**: Detected outliers in `Amount` using box plots; suggested capping at 1.5*IQR.
+- **Insights**:
+  1. Dominant categories (`airtime`, `financial_services`) are key for RFM analysis.
+  2. High variability in `Amount` requires outlier handling.
+  3. Temporal features (`TransactionHour`) show behavioral patterns.
+  4. `FraudResult` imbalance suggests limited use as a proxy.
+  5. Missing values in `CountryCode` (in some data) need imputation.
+These insights will guide feature engineering and proxy variable creation.
+
+## Project Structure
+- `data/raw/`: Raw data files (e.g., transactions data, variable definitions).
+=======
 ## Project Structure
 - `data/raw/`: Raw data files (e.g., transactiond data, variable definitions).
+
 - `data/processed/`: Processed datasets for model training.
 - `notebooks/`: Jupyter notebooks for EDA (`1.0-eda.ipynb`).
 - `src/`: Scripts for data processing, training, prediction, and API.
@@ -43,3 +64,4 @@ As highlighted in the *Credit Risk Analysis and Modeling* presentation, simple m
    ```bash
    git clone https://github.com/Trilord52/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data.git
    cd b5w5-Credit-Risk-Probability-Model-for-Alternative-Data
+
