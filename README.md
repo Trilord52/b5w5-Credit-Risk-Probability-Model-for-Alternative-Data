@@ -44,6 +44,10 @@ These insights will guide feature engineering and proxy variable creation.
 
 ## Project Structure
 - `data/raw/`: Raw data files (e.g., transactions data, variable definitions).
+=======
+## Project Structure
+- `data/raw/`: Raw data files (e.g., transactiond data, variable definitions).
+
 - `data/processed/`: Processed datasets for model training.
 - `notebooks/`: Jupyter notebooks for EDA (`1.0-eda.ipynb`).
 - `src/`: Scripts for data processing, training, prediction, and API.
@@ -60,3 +64,4 @@ These insights will guide feature engineering and proxy variable creation.
    ```bash
    git clone https://github.com/Trilord52/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data.git
    cd b5w5-Credit-Risk-Probability-Model-for-Alternative-Data
+
