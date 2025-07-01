@@ -67,6 +67,18 @@ Completed in `notebooks/2.0-feature-engineering.ipynb`:
 Committed to `task-3` branch with pull request,
 
 
+### Task 4: Proxy Variable Creation
+
+Completed in `notebooks/3.0-proxy-variable.ipynb`:
+- Loaded features from `data/processed/customer_features.csv`.
+- Selected high-IV features (e.g., `LogMonetary_woe`, `Frequency_woe`) based on Task 3 IV scores.
+- Applied K-means clustering (3–5 clusters), selected best using silhouette score.
+- Created `RiskCluster` proxy and mapped to `RiskLevel` (low/medium/high) based on `FraudResult` means.
+- Saved features with proxy to `data/processed/customer_features_with_proxy.csv`.
+- **Insights**: Clusters reflect risk patterns; high-IV features drive segmentation. Ready for Task 5 modeling.
+Committed to `task-4` branch with pull request.
+
+
 
 ## Project/Repository Structure
 
