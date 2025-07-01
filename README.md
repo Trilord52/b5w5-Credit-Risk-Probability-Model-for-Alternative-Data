@@ -78,7 +78,15 @@ Completed in `notebooks/3.0-proxy-variable.ipynb`:
 - **Insights**: Clusters reflect risk patterns; high-IV features drive segmentation. Ready for Task 5 modeling.
 Committed to `task-4` branch with pull request.
 
+### Task 5: Model Training and Evaluation
 
+Completed in `notebooks/4.0-model-training.ipynb`:
+- Loaded features from `data/processed/customer_features_with_proxy.csv`.
+- Trained Logistic Regression and Gradient Boosting on `RiskCluster` using high-IV features.
+- Evaluated models with accuracy, precision, recall, and F1-score; visualized confusion matrices.
+- Selected best model based on F1-score and saved to `models/best_model.pkl`.
+- **Insights**: Logistic Regression ensures interpretability; Gradient Boosting may improve performance. Ready for Task 6 deployment.
+Committed to `task-5` branch with pull request.
 
 ## Project/Repository Structure
 
