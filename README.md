@@ -49,11 +49,30 @@ In Task 2, I conducted a comprehensive EDA on the Xente transaction dataset (~96
 
 The notebook and plots were committed to the `task-2` branch with a pull request, informing feature engineering (Task 3).
 
+### Task 3: Feature Engineering
+
+Completed in `notebooks/2.0-feature-engineering.ipynb`:
+- **RFM Features**: Recency (days since last transaction), Frequency (transaction count), Monetary (total spend, log-transformed).
+- **Behavioral Features**: Average transaction amount (log-transformed), counts for `financial_services` and `airtime`, night activity ratio (0–6 AM).
+- **Outlier Handling**: Log transformation for `Monetary` and `AvgTransactionAmount` to reduce variance.
+- **WoE/IV Analysis**: Used `scorecardpy` to rank features by predictive power with `FraudResult` as temporary target. Replaced `woebin_plot` with custom plotting to avoid `TypeError`.
+- **Output**: Saved features to `data/processed/customer_features.csv`.
+- **Insights**: High-IV features (e.g., `LogMonetary`, `Frequency`) will guide proxy creation in Task 4.
+- **Fixes**: 
+  - Fixed `ImportError` by pinning `scipy==1.15.3`, `statsmodels==0.14.4`, `scorecardpy==0.1.9.2`.
+  - Fixed `TypeError: unhashable type: 'numpy.ndarray'` in `woebin_plot` by using custom plotting in cell 5.
+  - Fixed `KeyError: 'FraudResult'` with `how='left'` and `fillna(0)` in cell 5.
+  - Fixed `MergeError` by dropping duplicate `FraudResult` column in cell 5.
+  - Fixed `TypeError` in `woebin_ply` by converting `variable` column to strings in `woe_bins_copy` in cell 6.
+Committed to `task-3` branch with pull request,
+
+
+
 ## Project/Repository Structure
 
 - `data/raw/`: Raw data files (`transactions.csv`, `xente_variable_definitions.csv`).
 - `data/processed/`: Processed datasets (to be populated).
-- `notebooks/`: Jupyter Notebooks for EDA and analysis (`1.0-eda.ipynb`).
+- `notebooks/`: Jupyter Notebooks for EDA and analysis (`1.0-eda.ipynb`, `2.0-feature-engineering.ipynb`).
 - `src/`: Python scripts for data processing, training, and prediction.
 - `src/api/`: FastAPI application files.
 - `tests/`: Unit tests for scripts.
