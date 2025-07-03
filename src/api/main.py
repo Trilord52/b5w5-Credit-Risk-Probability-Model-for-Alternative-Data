@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import CustomerFeatures, PredictionResponse
+from src.api.pydantic_models import CustomerFeatures, PredictionResponse  # Correct relative import
+from . import model  # Relative import from the same directory
 from typing import List
-import model
 
 app = FastAPI(title="Credit Risk Prediction API")
 

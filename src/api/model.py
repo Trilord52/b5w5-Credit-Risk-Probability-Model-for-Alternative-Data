@@ -2,11 +2,11 @@ import joblib
 import numpy as np
 import pandas as pd
 from typing import List
-from pydantic_models import CustomerFeatures
+from src.api.pydantic_models import CustomerFeatures
 
-# Load the trained model and scaler
-model = joblib.load('../../models/best_model.pkl')
-scaler = joblib.load('../../models/scaler.pkl')
+# Load the trained model and scaler from the models/ directory
+model = joblib.load('models/best_model.pkl')
+scaler = joblib.load('models/scaler.pkl')
 
 def predict_risk(features: List[CustomerFeatures]) -> List[dict]:
     """
