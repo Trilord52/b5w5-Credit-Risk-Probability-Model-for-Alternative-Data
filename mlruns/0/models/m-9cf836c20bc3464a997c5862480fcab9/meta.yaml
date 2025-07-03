@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Python_Projects/10academy/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data/mlruns/0/models/m-9cf836c20bc3464a997c5862480fcab9/artifacts
+creation_timestamp: 1751563399719
+experiment_id: '0'
+last_updated_timestamp: 1751563421342
+model_id: m-9cf836c20bc3464a997c5862480fcab9
+model_type: null
+name: LogisticRegression
+source_run_id: null
+status: 2
+status_message: null

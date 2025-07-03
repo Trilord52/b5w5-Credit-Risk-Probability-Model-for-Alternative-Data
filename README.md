@@ -120,17 +120,56 @@ Committed to `task-5` branch with pull request.
 - `.github/workflows/ci.yml`: CI/CD pipeline configuration.
 
 ## Quick Start
-1. **Clone the Repository**:
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Trilord52/b5w5-Credit-Risk-Probability-Model-for-Alternative-Data.git
    cd b5w5-Credit-Risk-Probability-Model-for-Alternative-Data
-2. **Create and activate a virtual environment:**:
-    ```bash
-    python -m venv env
-    env\Scripts\activate      # Windows
-3. **Install dependencies:**:
-    ```bash
-    pip install -r requirements.txt
-4. **Run the EDA notebook:**:
-    ```bash
-    jupyter notebook notebooks/1.0-eda.ipynb
+   ```
+2. **Create and activate a virtual environment:**
+   ```bash
+   python -m venv env
+   # Windows:
+   env\Scripts\activate
+   # macOS/Linux:
+   source env/bin/activate
+   ```
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Run the EDA notebook:**
+   ```bash
+   jupyter notebook notebooks/1.0-eda.ipynb
+   ```
+
+## Running Tests
+To run all unit tests:
+```bash
+set PYTHONPATH=.
+pytest tests/ -v
+```
+
+## Training the Model
+To train the model and log experiments to MLflow:
+```bash
+python -m src.train
+```
+
+## Running the API Locally
+To start the FastAPI server locally:
+```bash
+uvicorn src.api.main:app --reload
+```
+Visit [http://localhost:8000/docs](http://localhost:8000/docs) for the interactive API docs.
+
+## Using Docker
+To build and run the API in Docker:
+```bash
+docker compose build
+docker compose up -d
+```
+The API will be available at [http://localhost:8000](http://localhost:8000).
+
+## Contributing
+- Please ensure all new code is covered by unit tests.
+- Run `flake8 .` to check code style before submitting a pull request.
