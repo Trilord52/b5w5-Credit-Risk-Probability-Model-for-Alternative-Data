@@ -105,6 +105,63 @@ Committed to `task-5` branch with pull request.
 - CI/CD set up in `.github/workflows/ci.yml` with `flake8` and `pytest`.
 - Instructions: Run `docker-compose up --build` to start on port 8000.
 
+## REST API
+
+This project provides a FastAPI-based REST API for credit risk prediction.
+
+- **Endpoint:** `/predict/` (POST)
+- **Input:** JSON array of customer features
+- **Output:** Risk level probabilities
+
+**Example Request:**
+```json
+[
+  {
+    "LogMonetary": 10.0,
+    "Frequency": 5,
+    "LogAvgTransactionAmount": 2.5,
+    "NightRatio": 0.1,
+    "Freq_FinancialServices": 1,
+    "Freq_Airtime": 2
+  }
+]
+```
+
+**How to Run Locally:**
+```bash
+uvicorn src.api.main:app --reload
+```
+Visit [http://localhost:8000/docs](http://localhost:8000/docs) for interactive API docs (Swagger UI).
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and deployment.
+
+- **Location:** `.github/workflows/ci.yml`
+- **Pipeline Steps:**
+  - Lint code with flake8
+  - Run unit tests with pytest
+  - Build Docker image
+  - Run and test the Dockerized API
+
+You can view the pipeline status and logs on the GitHub Actions tab of the repository.
+
+## Deployment
+
+To deploy the API using Docker:
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+The API will be available at [http://localhost:8000](http://localhost:8000).
+
+**Deployment scripts:**
+- `Dockerfile`: Defines the container image.
+- `docker-compose.yml`: Orchestrates the container.
+- `.github/workflows/ci.yml`: Automates build, test, and deployment steps.
+
 ## Project/Repository Structure
 
 - `data/raw/`: Raw data files (`transactions.csv`, `xente_variable_definitions.csv`).
