@@ -88,6 +88,23 @@ Completed in `notebooks/4.0-model-training.ipynb`:
 - **Insights**: Logistic Regression ensures interpretability; Gradient Boosting may improve performance. Ready for Task 6 deployment.
 Committed to `task-5` branch with pull request.
 
+
+### Credit Scoring Business Understanding
+- **Basel II Influence**: Basel II requires interpretable models for risk measurement, ensuring transparency for regulatory compliance. Our Logistic Regression model aligns with this need.
+- **Proxy Necessity**: Without a direct default label, a proxy (e.g., `RiskLevel`) from RFM clustering is essential, but risks include misclassification if the proxy poorly correlates with true defaults.
+- **Trade-offs**: Logistic Regression offers interpretability and compliance but may underperform; Gradient Boosting boosts accuracy but lacks transparency, posing regulatory challenges.
+
+### Task 2: Exploratory Data Analysis
+- Insight 1: `FraudResult` is imbalanced (193/96,000).
+- Insight 2: `LogMonetary` and `Frequency` show high variance.
+- Insight 3: Strong correlation between `LogAvgTransactionAmount` and `Monetary`.
+
+### Task 6: Model Deployment with FastAPI
+- Deployed in `src/api/main.py` with `/predict/` endpoint.
+- Containerized with `Dockerfile` and `docker-compose.yml`.
+- CI/CD set up in `.github/workflows/ci.yml` with `flake8` and `pytest`.
+- Instructions: Run `docker-compose up --build` to start on port 8000.
+
 ## Project/Repository Structure
 
 - `data/raw/`: Raw data files (`transactions.csv`, `xente_variable_definitions.csv`).
